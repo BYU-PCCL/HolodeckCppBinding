@@ -8,6 +8,7 @@ Shmem::Shmem(const std::string &name, int bufferSize,
                            const std::string &uuid) :
     _memPath(HOLODECK_BASE_PATH + uuid + "_" + name), _memSize(bufferSize) {
 #ifdef _Win32
+  // TODO(joshgreaves): Check this code
   std::wstring STemp = std::wstring(MemPath.begin(), MemPath.end());
   LPCWSTR WindowsMemPath = STemp.c_str();
   MemFile = CreateFileMapping(INVALID_HANDLE_VALUE, NULL, PAGE_READWRITE,

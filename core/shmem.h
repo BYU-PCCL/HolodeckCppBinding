@@ -2,8 +2,8 @@
   * Shmem gives an interface to memory mapped files,
   * and makes it easier to write and read from them.
   */
-#ifndef CORE_SHMEM_H_
-#define CORE_SHMEM_H_
+#ifndef HOLODECK_CORE_SHMEM_H_
+#define HOLODECK_CORE_SHMEM_H_
 
 #include <string>
 
@@ -33,7 +33,7 @@ class Shmem {
 	  * blocks on one machine.
 	  */
   explicit Shmem(const std::string &name, int bufferSize,
-                        const std::string &uuid);
+                 const std::string &uuid);
 
   Shmem(const Shmem &) = delete;
 
@@ -69,4 +69,4 @@ class Shmem {
 
 }  // namespace holodeck::core
 
-#endif  // CORE_SHMEM_H_
+#endif  // HOLODECK_CORE_SHMEM_H_

@@ -2,8 +2,8 @@
   * HolodeckClient is a class which makes it easy to use SharedMemory objects
   * to communicate with a Holodeck Server.
   */
-#ifndef CORE_HOLODECK_CLIENT_H_
-#define CORE_HOLODECK_CLIENT_H_
+#ifndef HOLODECK_CORE_HOLODECK_CLIENT_H_
+#define HOLODECK_CORE_HOLODECK_CLIENT_H_
 
 #include <string>
 #include <map>
@@ -128,4 +128,4 @@ class HolodeckClient {
 
 }  // namespace holodeck::core
 
-#endif  // CORE_HOLODECK_CLIENT_H_
+#endif  // HOLODECK_CORE_HOLODECK_CLIENT_H_
