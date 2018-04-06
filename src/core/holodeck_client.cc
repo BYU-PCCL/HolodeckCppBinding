@@ -1,6 +1,6 @@
 #include "core/holodeck_client.h"
 
-namespace holodeck::core {
+namespace holodeck {
 
 HolodeckClient::HolodeckClient(const std::string& uuid) : uuid_(uuid) {
 #ifdef _Win32
@@ -47,7 +47,7 @@ void* HolodeckClient::SubscribeActionSpace(const std::string& agent_name,
 void* HolodeckClient::SubscribeSetting(const std::string& setting_name,
                                        int buffer_size) {
   settings_[setting_name] = std::make_unique<Shmem>(setting_name,
-                                                    buffer_size);
+                                                    buffer_size, uuid_);
   return settings_[setting_name]->GetPtr();
 }
 
@@ -74,4 +74,4 @@ std::string HolodeckClient::MakeKey(const std::string& agent_name,
   return agent_name + "_" + sensor_name;
 }
 
-}  // namespace holodeck::core
+}  // namespace holodeck

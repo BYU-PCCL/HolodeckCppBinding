@@ -16,20 +16,20 @@
 #include "Windows.h"
 #include "HideWindowsPlatformTypes.h"
 
-constexpr std::string kLoadingSemaphorePath = "Global\\HOLODECK_LOADING_SEM";
-constexpr std::string kServerLockPath = "Global\\HOLODECK_SEMAPHORE_SERVER";
-constexpr std::string kClientLockPath = "Global\\HOLODECK_SEMAPHORE_CLIENT";
+const std::string kLoadingSemaphorePath = "Global\\HOLODECK_LOADING_SEM";
+const std::string kServerLockPath = "Global\\HOLODECK_SEMAPHORE_SERVER";
+const std::string kClientLockPath = "Global\\HOLODECK_SEMAPHORE_CLIENT";
 #elif defined __linux__
 #include <sys/mman.h>
 #include <unistd.h>
 #include <semaphore.h>
 
-constexpr std::string kLoadingSemaphorePath = "/HOLODECK_LOADING_SEM";
-constexpr std::string kServerLockPath = "/HOLODECK_SEMAPHORE_SERVER";
-constexpr std::string kClientLockPath = "/HOLODECK_SEMAPHORE_CLIENT";
+const std::string kLoadingSemaphorePath = "/HOLODECK_LOADING_SEM";
+const std::string kServerLockPath = "/HOLODECK_SEMAPHORE_SERVER";
+const std::string kClientLockPath = "/HOLODECK_SEMAPHORE_CLIENT";
 #endif
 
-namespace holodeck::core {
+namespace holodeck {
 
 class HolodeckClient {
  public:
@@ -45,7 +45,7 @@ class HolodeckClient {
 
   HolodeckClient& operator=(const HolodeckClient&) = delete;
 
-  ~UHolodeckClient() = default;
+  ~HolodeckClient() = default;
 
   /**
     * SubscribeSensor
@@ -121,6 +121,6 @@ class HolodeckClient {
 #endif
 };  // class HolodeckClient
 
-}  // namespace holodeck::core
+}  // namespace holodeck
 
 #endif  // HOLODECK_CORE_HOLODECK_CLIENT_H_

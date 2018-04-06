@@ -1,8 +1,8 @@
 #include "core/shmem.h"
 
-namespace holodeck::core {
+namespace holodeck {
 
-constexpr std::string kHolodeckBasePath = "/HOLODECK_MEM";
+const std::string kHolodeckBasePath = "/HOLODECK_MEM";
 
 Shmem::Shmem(const std::string& name, unsigned buffer_size,
              const std::string& uuid) :
@@ -24,4 +24,4 @@ Shmem::Shmem(const std::string& name, unsigned buffer_size,
 #endif
 }
 
-}  // namespace holodeck::core
+}  // namespace holodeck

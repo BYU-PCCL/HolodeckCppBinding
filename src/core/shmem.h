@@ -17,7 +17,7 @@
 #include <unistd.h>
 #endif
 
-namespace holodeck::core {
+namespace holodeck {
 
 class Shmem {
  public:
@@ -65,6 +65,6 @@ class Shmem {
 #endif
 };  // Shmem
 
-}  // namespace holodeck::core
+}  // namespace holodeck
 
 #endif  // HOLODECK_CORE_SHMEM_H_
